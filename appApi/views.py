@@ -14,7 +14,7 @@ class ProductView(generics.ListAPIView):
 
 class ProductCreateView(generics.CreateAPIView):
         serializer_class = serializers.ProductSerializer
-        permission_classes = [permissions.IsAdminUser]
+        permission_classes = [permissions.AllowAny]
 
         def perform_create(self, serializer):
                 new_product = serializer.save()
@@ -35,16 +35,20 @@ class ProductDetailsView(generics.RetrieveAPIView):
 class ProductUpdateView(generics.UpdateAPIView):
         queryset = models.Product.objects.all()
         serializer_class = serializers.ProductSerializer
-        permission_classes = [permissions.IsAdminUser]
+        permission_classes = [permissions.AllowAny]
 
         def perform_update(self, serializer):
                 update_course = serializer.save()
-        
+
+
+
 class ProductDeleteView(generics.DestroyAPIView):
         queryset = models.Product.objects.all()
         serializer_class = serializers.ProductSerializer
-        permission_classes = [permissions.IsAdminUser]
+        permission_classes = [permissions.AllowAny]
         
+
+
 class SearchProductView(generics.ListAPIView):
         serializer_class = serializers.ProductSerializer
         permission_classes = [permissions.AllowAny]
