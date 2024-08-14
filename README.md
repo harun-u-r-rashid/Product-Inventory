@@ -37,5 +37,10 @@ As I used drf_spectacular in backend develepment, in local host/ deploy host the
 1. An authorized user can cerate, delete and update the product. unauthorized user only can view product list and product details
 
 
+Deploy link:
+frontend - https://inventory-products.netlify.app/
+backend - https://product-inventory-u6f9.onrender.com/
+
+
 
 
